@@ -1,0 +1,21 @@
+<h1>Lista Kategorii</h1>
+{{#if categories.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Opis</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each categories}}
+        <tr>
+          <td>{{this.id}}</td>
+          <td>{{this.description}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p>Brak kategorii w bazie danych.</p>
+{{/if}}

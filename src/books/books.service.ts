@@ -11,11 +11,16 @@ export class BooksService {
   ) {}
   //get all books
   async findAll(): Promise<Book[]> {
-    return await this.booksRepository.find();
+    return await this.booksRepository.find({
+      relations: ['category', 'publisher'],
+    });
   }
   // get one book by id
   async findOne(id: number): Promise<Book | null> {
-    return await this.booksRepository.findOne({ where: { id } });
+    return await this.booksRepository.findOne({
+      where: { id },
+      relations: ['category', 'publisher'],
+    });
   }
 
   // create a new book

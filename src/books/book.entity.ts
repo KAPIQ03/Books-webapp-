@@ -1,4 +1,12 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  JoinColumn,
+} from 'typeorm';
+import { Category } from '../category/category.entity';
+import { Publisher } from '../publisher/publisher.entity';
 
 @Entity()
 export class Book {
@@ -8,9 +16,17 @@ export class Book {
   @Column()
   title: string;
 
-  @Column()
-  category_idc: number;
+  @ManyToOne(() => Category, (category) => category.books)
+  @JoinColumn({ name: 'category_idc' })
+  category: Category;
 
-  @Column()
-  publisher_idp: number;
+  @ManyToOne(() => Publisher, (publisher) => publisher.books)
+  @JoinColumn({ name: 'publisher_idp' })
+  publisher: Publisher;
+
+  // @Column()
+  // category_idc: number;
+
+  // @Column()
+  // publisher_idp: number;
 }

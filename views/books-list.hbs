@@ -5,7 +5,7 @@
       <tr>
         <th>ID</th>
         <th>Tytuł</th>
-        <th>ID Autor</th>
+        <th>ID Kategorii</th>
         <th>ID Wydawnictwo</th>
       </tr>
     </thead>
@@ -14,8 +14,8 @@
         <tr>
           <td>{{this.id}}</td>
           <td>{{this.title}}</td>
-          <td>{{this.category_idc}}</td>
-          <td>{{this.publisher_idp}}</td>
+          <td>{{this.category.description}}</td>
+          <td>{{this.publisher.name}}</td>
         </tr>
       {{/each}}
     </tbody>

@@ -6,7 +6,7 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  @Render('index') // przykład dekoratora 
+  @Render('index') // przykład dekoratora
   root() {
     return { message: 'Witaj nastronie poświęconej książkom!' };
   }

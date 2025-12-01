@@ -1,4 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Book } from '../books/book.entity';
 
 @Entity()
 export class Category {
@@ -6,5 +7,8 @@ export class Category {
   id: number;
 
   @Column()
-  name: string;
+  description: string;
+
+  @OneToMany(() => Book, (book) => book.category)
+  books: Book[];
 }

@@ -1,0 +1,23 @@
+<h1>Lista Wydawnictw</h1>
+{{#if publishers.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nazwa</th>
+        <th>Adres</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each publishers}}
+        <tr>
+          <td>{{this.id}}</td>
+          <td>{{this.name}}</td>
+          <td>{{this.address}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p>Brak wydawnictw w bazie danych.</p>
+{{/if}}
